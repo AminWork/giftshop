@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>فروشگاه هدیه</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    .hero {
+      background-image: url('{{ url_for('static', filename='images/hero-background.png') }}');
+      background-size: cover;
+      background-position: center;
+      width: 100%;
+      height: 100vh; /* Full height of the viewport */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+    }
+    .hero-overlay {
+      background: rgba(0, 0, 0, 0.5); /* For semi-transparent overlay */
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+    .hero-input-container {
+      z-index: 10; /* Ensures the input is above the overlay */
+      text-align: center;
+      width: 75%;
+      max-width: 500px;
+    }
+    nav {
+      background: rgba(255, 255, 255, 0.8); /* Semi-transparent white background */
+      backdrop-filter: blur(10px); /* Adds a blur effect for better readability */
+      box-shadow: none; /* Removes the shadow */
+      border-bottom: 1px solid rgba(255, 255, 255, 0.3); /* Adds a subtle border */
+      padding: 0.8rem 0; /* Adjust padding for a sleek appearance */
+    }
+    nav ul li a {
+      font-size: 1rem; /* Slightly larger font for better visibility */
+      padding: 0.5rem 1rem; /* Adds more clickable space */
+      transition: color 0.3s, transform 0.3s; /* Smooth hover effect */
+    }
+    nav ul li a:hover {
+      color: #e91e63; /* Accent color on hover */
+      transform: scale(1.05); /* Slight scaling effect */
+    }
+    nav .logo {
+      font-size: 1.5rem; /* Enhance logo font size */
+      color: #e91e63; /* Match the theme's accent color */
+      font-weight: bold;
+    }
+  </style>
+  
+</head>
+<body class="bg-gray-100 text-gray-900">
+
+  <!-- Navbar -->
+<nav class="fixed w-full top-0 z-10">
+  <div class="container mx-auto px-4 flex justify-between items-center">
+    <!-- Logo -->
+    <div class="logo">فروشگاه هدیه</div>
+    <!-- Menu Items -->
+    <ul class="flex space-x-4 space-x-reverse items-center">
+      <li><a href="#" class="text-gray-800 hover:text-pink-600">خانه</a></li>
+      <li><a href="#" class="text-gray-800 hover:text-pink-600">محصولات</a></li>
+      <li class="group relative">
+        <a href="#" class="text-gray-800 hover:text-pink-600 flex items-center">
+          دسته‌بندی‌ها
+          <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+          </svg>
+        </a>
+        <!-- Dropdown -->
+        <ul class="absolute right-0 hidden group-hover:block bg-white shadow-md rounded-lg mt-2 w-48">
+          <li><a href="#" class="block px-4 py-2 text-gray-600 hover:text-pink-600 hover:bg-gray-100">دیجیتال</a></li>
+          <li><a href="#" class="block px-4 py-2 text-gray-600 hover:text-pink-600 hover:bg-gray-100">شیرینی</a></li>
+          <li><a href="#" class="block px-4 py-2 text-gray-600 hover:text-pink-600 hover:bg-gray-100">کیک</a></li>
+          <li><a href="#" class="block px-4 py-2 text-gray-600 hover:text-pink-600 hover:bg-gray-100">کیف و کفش</a></li>
+        </ul>
+      </li>
+      <li><a href="/aboutus" class="text-gray-800 hover:text-pink-600">درباره ما</a></li>
+      <li><a href="/contactus" class="text-gray-800 hover:text-pink-600">تماس با ما</a></li>
+    </ul>
+    <!-- Buttons -->
+    <div class="flex space-x-4 space-x-reverse items-center">
+      <a href="/signin" class="px-4 py-2 bg-pink-600 text-white rounded-lg hover:bg-pink-700 transition">ورود</a>
+      <a href="/signup" class="px-4 py-2 bg-gray-200 text-gray-600 rounded-lg hover:bg-gray-300 transition">ثبت‌نام</a>
+    </div>
+  </div>
+</nav>
+
+
+  <!-- Hero Section -->
+<section class="mt-16">
+  <div class="hero">
+    <div class="hero-overlay"></div>
+    <!-- Centered Textbox -->
+    <div class="hero-input-container">
+      <input 
+        type="text" 
+        placeholder="چه نوع هدیه‌ای مد نظر دارید؟ از ما بپرسید!" 
+        class="w-full px-4 py-2 border border-white bg-transparent text-white placeholder-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-pink-500 focus:border-pink-500">
+    </div>
+  </div>
+</section>
+
+  
+
+  <!-- Gift Categories -->
+  <section class="py-12">
+    <div class="container mx-auto px-4">
+      <h2 class="text-2xl font-bold text-center mb-8 text-pink-600">دسته‌بندی‌های هدیه</h2>
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+        <!-- Cards -->
+        <a href="#" class="flex flex-col items-center transition transform hover:scale-105">
+          <div class="w-24 h-24 bg-pink-100 rounded-full flex items-center justify-center overflow-hidden">
+            <img src="https://via.placeholder.com/64" alt="دیجیتال" class="w-full h-full object-cover">
+          </div>
+          <p class="mt-4 text-gray-700 font-medium">دیجیتال</p>
+        </a>
+        <a href="#" class="flex flex-col items-center transition transform hover:scale-105">
+          <div class="w-24 h-24 bg-pink-100 rounded-full flex items-center justify-center overflow-hidden">
+            <img src="https://via.placeholder.com/64" alt="شیرینی" class="w-full h-full object-cover">
+          </div>
+          <p class="mt-4 text-gray-700 font-medium">شیرینی</p>
+        </a>
+        <a href="#" class="flex flex-col items-center transition transform hover:scale-105">
+          <div class="w-24 h-24 bg-pink-100 rounded-full flex items-center justify-center overflow-hidden">
+            <img src="https://via.placeholder.com/64" alt="کیک" class="w-full h-full object-cover">
+          </div>
+          <p class="mt-4 text-gray-700 font-medium">کیک</p>
+        </a>
+        <a href="#" class="flex flex-col items-center transition transform hover:scale-105">
+          <div class="w-24 h-24 bg-pink-100 rounded-full flex items-center justify-center overflow-hidden">
+            <img src="https://via.placeholder.com/64" alt="کیف و کفش" class="w-full h-full object-cover">
+          </div>
+          <p class="mt-4 text-gray-700 font-medium">کیف و کفش</p>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-gray-800 text-gray-200 py-8">
+    <div class="container mx-auto px-4">
+      <div class="text-center mt-8 text-gray-500 text-sm">
+        &copy; 2024 فروشگاه هدیه. تمامی حقوق محفوظ است.
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
