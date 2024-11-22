@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>فروشگاه هدیه</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    .chat-box {
+      display: none;
+      transition: opacity 0.3s ease-in-out;
+    }
+    .chat-box.open {
+      display: block;
+      opacity: 1;
+    }
+  </style>
+</head>
+<body class="bg-gray-100 text-gray-900">
+
+  <!-- Navbar -->
+<nav class="bg-white shadow-md fixed w-full top-0 z-10">
+    <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+      <div class="text-lg font-bold text-pink-600">فروشگاه هدیه</div>
+      <ul class="flex space-x-4 space-x-reverse relative">
+        <li><a href="#" class="text-gray-600 hover:text-pink-600">خانه</a></li>
+        <li><a href="#" class="text-gray-600 hover:text-pink-600">محصولات</a></li>
+        <li class="group relative">
+          <a href="#" class="text-gray-600 hover:text-pink-600 flex items-center">
+            دسته‌بندی‌ها
+            <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+            </svg>
+          </a>
+          <ul class="absolute right-0 hidden group-hover:block bg-white shadow-lg rounded-lg mt-2 w-48">
+            <li><a href="#" class="block px-4 py-2 text-gray-600 hover:text-pink-600 hover:bg-gray-100">دیجیتال</a></li>
+            <li><a href="#" class="block px-4 py-2 text-gray-600 hover:text-pink-600 hover:bg-gray-100">شیرینی</a></li>
+            <li><a href="#" class="block px-4 py-2 text-gray-600 hover:text-pink-600 hover:bg-gray-100">کیک</a></li>
+            <li><a href="#" class="block px-4 py-2 text-gray-600 hover:text-pink-600 hover:bg-gray-100">کیف و کفش</a></li>
+          </ul>
+        </li>
+        <li><a href="#" class="text-gray-600 hover:text-pink-600">درباره ما</a></li>
+        <li><a href="#" class="text-gray-600 hover:text-pink-600">تماس با ما</a></li>
+      </ul>
+    </div>
+  </nav>
+  
+
+  <!-- Hero Slider -->
+  <section class="mt-16">
+    <div class="relative">
+      <div class="h-64 bg-cover bg-center" style="background-image: url('https://via.placeholder.com/1200x400?text=هدیه+ایده‌آل+خود+را+پیدا+کنید');">
+        <div class="h-full w-full bg-black bg-opacity-50 flex items-center justify-center">
+          <h1 class="text-3xl md:text-5xl text-white font-bold">هدیه‌ای خاص برای عزیزانتان</h1>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Gift Categories -->
+  <section class="py-12">
+    <div class="container mx-auto px-4">
+      <h2 class="text-2xl font-bold text-center mb-8 text-pink-600">دسته‌بندی‌های هدیه</h2>
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+        <!-- Card 1 -->
+        <a href="#" class="flex flex-col items-center transition transform hover:scale-105">
+          <div class="w-24 h-24 bg-pink-100 rounded-full flex items-center justify-center overflow-hidden">
+            <img src="https://via.placeholder.com/64" alt="دیجیتال" class="w-full h-full object-cover">
+          </div>
+          <p class="mt-4 text-gray-700 font-medium">دیجیتال</p>
+        </a>
+        <!-- Card 2 -->
+        <a href="#" class="flex flex-col items-center transition transform hover:scale-105">
+          <div class="w-24 h-24 bg-pink-100 rounded-full flex items-center justify-center overflow-hidden">
+            <img src="https://via.placeholder.com/64" alt="شیرینی" class="w-full h-full object-cover">
+          </div>
+          <p class="mt-4 text-gray-700 font-medium">شیرینی‌</p>
+        </a>
+        <!-- Card 3 -->
+        <a href="#" class="flex flex-col items-center transition transform hover:scale-105">
+          <div class="w-24 h-24 bg-pink-100 rounded-full flex items-center justify-center overflow-hidden">
+            <img src="https://via.placeholder.com/64" alt="کیک" class="w-full h-full object-cover">
+          </div>
+          <p class="mt-4 text-gray-700 font-medium">کیک</p>
+        </a>
+        <!-- Card 4 -->
+        <a href="#" class="flex flex-col items-center transition transform hover:scale-105">
+          <div class="w-24 h-24 bg-pink-100 rounded-full flex items-center justify-center overflow-hidden">
+            <img src="https://via.placeholder.com/64" alt="کیف و کفش" class="w-full h-full object-cover">
+          </div>
+          <p class="mt-4 text-gray-700 font-medium">کیف و کفش</p>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Chat Button and Box -->
+  <div class="fixed bottom-6 right-6">
+    <!-- Chat Box -->
+    <div id="chat-box" class="chat-box bg-white shadow-lg rounded-lg p-4 w-80">
+      <div class="flex justify-between items-center">
+        <h3 class="text-lg font-bold mb-2 text-pink-600">چت با ما</h3>
+        <button id="close-chat" class="text-gray-400 hover:text-gray-600 text-xl font-bold">×</button>
+      </div>
+      <div id="chat-content" class="h-48 overflow-y-auto border-t pt-2">
+        <div class="text-right">
+          <div class="bg-pink-100 p-2 rounded-lg mb-2">سلام! چطور می‌توانم کمک کنم؟</div>
+        </div>
+      </div>
+      <div class="mt-2">
+        <textarea id="chat-input" class="w-full border rounded-lg p-2" placeholder="پیام خود را بنویسید..."></textarea>
+        <button id="send-message" class="bg-pink-600 text-white rounded-lg px-4 py-2 mt-2 hover:bg-pink-700 w-full">ارسال</button>
+      </div>
+    </div>
+
+    <!-- Chat Button -->
+    <button id="chat-button" class="bg-pink-600 text-white rounded-full p-4 shadow-lg hover:bg-pink-700">
+      💬
+    </button>
+  </div>
+
+  <!-- Footer -->
+  <footer class="bg-gray-800 text-gray-200 py-8">
+    <div class="container mx-auto px-4">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <!-- Contact Info -->
+        <div>
+          <h3 class="text-lg font-bold mb-4 text-pink-400">تماس با ما</h3>
+          <p>آدرس: تهران، خیابان نمونه</p>
+          <p>تلفن: 123456789</p>
+          <p>ایمیل: info@example.com</p>
+        </div>
+        <!-- Quick Links -->
+        <div>
+          <h3 class="text-lg font-bold mb-4 text-pink-400">لینک‌های سریع</h3>
+          <ul>
+            <li><a href="#" class="text-gray-400 hover:text-white">خانه</a></li>
+            <li><a href="#" class="text-gray-400 hover:text-white">محصولات</a></li>
+            <li><a href="#" class="text-gray-400 hover:text-white">درباره ما</a></li>
+            <li><a href="#" class="text-gray-400 hover:text-white">تماس با ما</a></li>
+          </ul>
+        </div>
+        <!-- Social Media -->
+        <div>
+          <h3 class="text-lg font-bold mb-4 text-pink-400">شبکه‌های اجتماعی</h3>
+          <div class="flex space-x-4 space-x-reverse">
+            <a href="#" class="text-gray-400 hover:text-white">فیسبوک</a>
+            <a href="#" class="text-gray-400 hover:text-white">توییتر</a>
+            <a href="#" class="text-gray-400 hover:text-white">اینستاگرام</a>
+          </div>
+        </div>
+      </div>
+      <div class="text-center mt-8 text-gray-500 text-sm">
+        &copy; 2024 فروشگاه هدیه. تمامی حقوق محفوظ است.
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const chatBox = document.getElementById('chat-box');
+    const chatButton = document.getElementById('chat-button');
+    const closeChat = document.getElementById('close-chat');
+    const chatContent = document.getElementById('chat-content');
+    const chatInput = document.getElementById('chat-input');
+    const sendMessage = document.getElementById('send-message');
+
+    // Open Chat Box
+    chatButton.addEventListener('click', () => {
+      chatBox.classList.add('open');
+    });
+
+    // Close Chat Box
+    closeChat.addEventListener('click', () => {
+      chatBox.classList.remove('open');
+    });
+
+    // Send Message
+    sendMessage.addEventListener('click', () => {
+      const message = chatInput.value.trim();
+      if (message) {
+        const userMessage = document.createElement('div');
+        userMessage.className = 'bg-gray-100 p-2 rounded-lg mb-2 text-left';
+        userMessage.textContent = message;
+        chatContent.appendChild(userMessage);
+        chatInput.value = '';
+
+        // Simulate a response
+        setTimeout(() => {
+          const botResponse = document.createElement('div');
+          botResponse.className = 'bg-pink-100 p-2 rounded-lg mb-2 text-right';
+          botResponse.textContent = 'در اسرع وقت پاسخ خواهیم داد!';
+          chatContent.appendChild(botResponse);
+
+          // Scroll to bottom
+          chatContent.scrollTop = chatContent.scrollHeight;
+        }, 1000);
+
+        // Scroll to bottom
+        chatContent.scrollTop = chatContent.scrollHeight;
+      }
+    });
+  </script>
+
+</body>
+</html>
