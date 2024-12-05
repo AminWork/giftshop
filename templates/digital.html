@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>دسته‌بندی دیجیتال | فروشگاه هدیه</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;700&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    /* Global Styles */
+    body {
+      font-family: 'Vazirmatn', sans-serif;
+      background-color: #121212; /* Dark background for digital theme */
+      color: #E0E0E0; /* Light gray text for contrast */
+    }
+    h1, h2, h3 {
+      font-family: 'Vazirmatn', sans-serif;
+    }
+    nav ul li a {
+      font-family: 'Poppins', sans-serif;
+      letter-spacing: 0.5px;
+    }
+
+    /* Navbar */
+    nav {
+      background: linear-gradient(90deg, #1E88E5, #3949AB); /* Blue gradient for digital vibe */
+      padding: 1rem 2rem;
+      box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    }
+    nav .container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    nav ul {
+      display: flex;
+      list-style: none;
+      gap: 1rem;
+    }
+    nav ul li {
+      position: relative;
+    }
+    nav ul li a {
+      color: #FFF;
+      font-size: 1rem;
+      text-decoration: none;
+      padding: 0.5rem 1rem;
+      transition: color 0.3s ease-in-out, transform 0.3s ease-in-out;
+    }
+    nav ul li a:hover {
+      color: #03DAC5; /* Teal hover for contrast */
+      transform: scale(1.1);
+    }
+
+    /* Hero Section */
+    .hero {
+      background: linear-gradient(to bottom, rgba(30, 136, 229, 0.8), rgba(57, 73, 171, 0.8)), url('https://via.placeholder.com/1920x800') no-repeat center/cover;
+      height: 70vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+    }
+    .hero-content {
+      text-align: center;
+      color: #FFF;
+    }
+    .hero-content h1 {
+      font-size: 3rem;
+      margin-bottom: 1.5rem;
+    }
+    .hero-content p {
+      font-size: 1.2rem;
+      margin-bottom: 1rem;
+    }
+
+    /* Digital Products Section */
+    .products {
+      padding: 3rem 1rem;
+      background: #212121; /* Dark gray section */
+    }
+    .products h2 {
+      text-align: center;
+      font-size: 2rem;
+      color: #03DAC5; /* Teal heading for contrast */
+      margin-bottom: 2rem;
+    }
+    .products .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 2rem;
+    }
+    .products .card {
+      background: #2E2E2E; /* Card background */
+      border-radius: 0.5rem;
+      text-align: center;
+      padding: 1rem;
+      transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    }
+    .products .card:hover {
+      transform: scale(1.05);
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    }
+    .products .card img {
+      width: 100%;
+      height: 150px;
+      object-fit: contain;
+    }
+    .products .card h3 {
+      margin-top: 1rem;
+      font-size: 1.1rem;
+      color: #E0E0E0;
+    }
+    .products .card p {
+      margin-top: 0.5rem;
+      font-size: 0.9rem;
+      color: #B0BEC5;
+    }
+
+    /* Footer */
+    footer {
+      background: #1E88E5; /* Solid blue for footer */
+      padding: 2rem;
+      text-align: center;
+      color: #FFF;
+    }
+    footer p {
+      margin: 0;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav>
+    <div class="container">
+      <a href="/" class="text-2xl font-bold text-white">فروشگاه هدیه</a>
+      <ul>
+        <li><a href="/">خانه</a></li>
+        <li><a href="/categories">دسته‌بندی‌ها</a></li>
+        <li><a href="/contact">تماس با ما</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-content">
+      <h1>دسته‌بندی دیجیتال</h1>
+      <p>بهترین هدیه‌های دیجیتال برای تکنولوژی‌دوستان</p>
+    </div>
+  </section>
+
+  <!-- Digital Products Section -->
+  <section class="products">
+    <h2>محصولات دیجیتال</h2>
+    <div class="grid container mx-auto">
+      <div class="card">
+        <img src="https://via.placeholder.com/300x150" alt="لپ‌تاپ">
+        <h3>لپ‌تاپ</h3>
+        <p>مدل‌های متنوع با قیمت‌های مناسب</p>
+      </div>
+      <div class="card">
+        <img src="https://via.placeholder.com/300x150" alt="گوشی موبایل">
+        <h3>گوشی موبایل</h3>
+        <p>جدیدترین مدل‌های برندهای برتر</p>
+      </div>
+      <div class="card">
+        <img src="https://via.placeholder.com/300x150" alt="هدفون">
+        <h3>هدفون</h3>
+        <p>کیفیت صدای بی‌نظیر برای موسیقی‌دوستان</p>
+      </div>
+      <div class="card">
+        <img src="https://via.placeholder.com/300x150" alt="ساعت هوشمند">
+        <h3>ساعت هوشمند</h3>
+        <p>هدیه‌ای شیک و کاربردی</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2024 فروشگاه هدیه. تمامی حقوق محفوظ است.</p>
+  </footer>
+
+</body>
+</html>

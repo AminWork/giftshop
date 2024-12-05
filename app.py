@@ -18,6 +18,10 @@ def signup():
 def contactus():
     return render_template('contactus.html')
 
+@app.route('/digital')
+def digital():
+    return render_template('digital.html')
+
 @app.route('/aboutus')
 def aboutus():
     return render_template('aboutus.html')
